@@ -6,6 +6,12 @@ import LoginPage from "./pages/LoginPage";
 import ForgotPasswrod from "./pages/ForgotPasswrod";
 import HomePage from "./pages/HomePage";
 
+/* 
+
+roboto-bold text-[#4E5D78] text-lg ml-[10px]
+
+ */
+
 const router = createBrowserRouter([
 	{
 		path: "/",

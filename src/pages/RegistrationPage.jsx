@@ -1,12 +1,12 @@
 import AuthHeader from "../components/header/AuthHeader";
-import Title from "../components/header/Title";
-import SubTitle from "../components/header/SubTitle";
 
 import RegisterForm from "../components/auth/RegisterForm";
 import { Link } from "react-router-dom";
 import Divider from "../components/auth/Divider";
 
 import LoginButton from "../components/auth/LoginButton";
+import Title from "../components/auth/Title";
+import SubTitle from "../components/auth/SubTitle";
 
 const RegistrationPage = () => {
 	return (

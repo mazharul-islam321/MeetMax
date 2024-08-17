@@ -10,9 +10,3 @@ createRoot(document.getElementById("root")).render(
 		<RouterProvider router={router} />
 	</StrictMode>
 );
-
-/* 
-
-roboto-bold text-[#4E5D78] text-lg ml-[10px]
-
- */

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import AuthHeader from "../components/header/AuthHeader";
-import SubTitle from "../components/header/SubTitle";
-import Title from "../components/header/Title";
+import SubTitle from "../components/auth/SubTitle";
+import Title from "../components/auth/Title";
 import at from "../assets/at.svg";
 import angle_left from "../assets/angle-left.svg";
 
