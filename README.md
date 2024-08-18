@@ -11,3 +11,4 @@ Currently, two official plugins are available:
 
 -   react router dom
 -   roboto font
+-   tailwind

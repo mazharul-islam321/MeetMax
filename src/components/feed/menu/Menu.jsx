@@ -8,9 +8,11 @@ import profile from "../../../assets/menuicon/profile.svg";
 import setting from "../../../assets/menuicon/setting.svg";
 import logout from "../../../assets/menuicon/logout.svg";
 
+// md:mx-auto hidden md:block
+
 const Menu = () => {
 	return (
-		<div className="mx-auto">
+		<div className="mx-auto ">
 			{menuItems.map((item) => (
 				<MenuOption key={item.id} item={item} />
 			))}

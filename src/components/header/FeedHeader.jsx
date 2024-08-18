@@ -7,7 +7,7 @@ import avatar from "../../assets/avatar.jpeg";
 
 const FeedHeader = () => {
 	return (
-		<header className="flex items-center  pl-5 pr-[30px] py-[18px]">
+		<header className="flex items-center pl-5 pr-[30px] py-[18px] w-full h-[62px] md:h-[78px]">
 			<>
 				<div className="mr-[102px] hidden md:block">
 					<Logo />

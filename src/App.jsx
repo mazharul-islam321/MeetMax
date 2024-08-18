@@ -10,6 +10,8 @@ import HomePage from "./pages/HomePage";
 
 roboto-bold text-[#4E5D78] text-lg ml-[10px]
 
+https://via.placeholder.com/150
+
  */
 
 const router = createBrowserRouter([
