@@ -12,11 +12,12 @@ import logout from "../../../assets/menuicon/logout.svg";
 
 const Menu = () => {
 	return (
-		<div className="mx-auto ">
+		<div className="mx-auto hidden md:block ">
 			{menuItems.map((item) => (
 				<MenuOption key={item.id} item={item} />
 			))}
 
+			{/* just for logout */}
 			<div className="relative flex items-center w-[200px] h-[46px] rounded-[10px] mx-5 my-[10px]">
 				<img src={logout} alt="log out" className="mx-5" />
 				<span className="roboto-bold text-[#4E5D78] text-base">

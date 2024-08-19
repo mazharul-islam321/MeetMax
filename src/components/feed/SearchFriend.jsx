@@ -17,7 +17,7 @@ const SearchFriend = () => {
 				<img src={arrow_right} alt="arrow right" />
 			</div>
 
-			<div className="overflow-x-auto my-[30px] ">
+			<div className="overflow-x-auto my-[30px] no-scrollbar">
 				<div className="flex w-max ">
 					{SearchFriendList.map((item) => (
 						<div

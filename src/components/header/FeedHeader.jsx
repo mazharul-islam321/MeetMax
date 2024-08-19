@@ -22,7 +22,7 @@ const FeedHeader = () => {
 			<div className="flex grow">
 				<FeedHeaderSearch
 					placeholderText="Search for something here..."
-					searchWidth="542px"
+					searchHeaderWidth={true}
 				/>
 			</div>
 

@@ -7,7 +7,7 @@ import friend5 from "../../assets/friends/friend5.jpeg";
 
 const FriendList = () => {
 	return (
-		<div className="w-full h-screen">
+		<div className="w-full h-screen hidden md:block">
 			<div className="flex justify-between items-center mb-5">
 				<h2 className="roboto-bold text-base text-[#4E5D78] ">
 					Friends
@@ -16,7 +16,7 @@ const FriendList = () => {
 				<img src={three_dot} alt="three dot" />
 			</div>
 
-			<div className="space-y-4 h-screen overflow-y-auto">
+			<div className="space-y-4 h-screen overflow-y-scroll no-scrollbar">
 				{friendListData.map((item) => (
 					<div
 						key={item.id}
