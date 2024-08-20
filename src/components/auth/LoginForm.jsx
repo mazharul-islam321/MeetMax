@@ -42,7 +42,7 @@ const LoginForm = () => {
 		<form onSubmit={handleSubmit(submitForm)}>
 			<div
 				className={`relative ${
-					errors.email.message ? "mb-1" : "my-[14px] md:my-5"
+					errors?.email?.message ? "mb-1" : "my-[14px] md:my-5"
 				}`}
 			>
 				<input
@@ -52,7 +52,7 @@ const LoginForm = () => {
 					name="email"
 					placeholder="Your Email"
 					className={`relative w-full h-10 md:h-[52px] pl-[34px] md:pl-11 border ${
-						errors.email
+						errors?.email
 							? "border-[#FF5630] "
 							: "border-[#4E5D78]/20 "
 					} rounded-md md:rounded-[10px] focus:outline-none focus:border-[#377DFF] placeholder-[#4E5D78]/60`}
@@ -65,13 +65,13 @@ const LoginForm = () => {
 			</div>
 			{errors && (
 				<div role="alert" className="text-[#FF5630]">
-					{errors.email.message}
+					{errors?.email?.message}
 				</div>
 			)}
 
 			<div
 				className={`relative ${
-					errors.password.message ? "mb-1" : "my-[14px] md:my-5"
+					errors?.password?.message ? "mb-1" : "my-[14px] md:my-5"
 				}`}
 			>
 				<input
@@ -88,7 +88,7 @@ const LoginForm = () => {
 					name="password"
 					placeholder="enter password"
 					className={`relative w-full h-10 md:h-[52px] pl-[34px] md:pl-11 pr-[34px] md:pr-11 border ${
-						errors.password
+						errors?.password
 							? "border-[#FF5630] "
 							: "border-[#4E5D78]/20 "
 					}rounded-md md:rounded-[10px] focus:outline-none focus:border-[#377DFF] placeholder-[#4E5D78]/60`}
@@ -108,7 +108,7 @@ const LoginForm = () => {
 			</div>
 			{errors && (
 				<div role="alert" className="text-[#FF5630]">
-					{errors.password.message}
+					{errors?.password?.message}
 				</div>
 			)}
 

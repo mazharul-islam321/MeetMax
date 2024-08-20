@@ -50,7 +50,13 @@ const ForgotPasswrod = () => {
 			{/* forgot password card */}
 			<div className="w-[327px] md:w-[580px] h-[186px]  md:h-[248px] py-6 px-5 md:p-10 mx-auto shadow-[0_5px_20px_-15px_rgba(0,0,0,0.3)] bg-white  mt-7 rounded-[20px]">
 				<form onSubmit={handleSubmit(submitForm)}>
-					<div className="relative mb-[14px] md:mb-5">
+					<div
+						className={`relative ${
+							errors?.email?.message
+								? "mb-1"
+								: "my-[14px] md:my-5"
+						}`}
+					>
 						<input
 							{...register("email", {
 								required: "Email ID is Required",
@@ -60,7 +66,7 @@ const ForgotPasswrod = () => {
 							name="email"
 							placeholder="Your Email"
 							className={`relative w-full h-10 md:h-[52px] pl-[34px] md:pl-11 border ${
-								errors.email
+								errors?.email
 									? "border-[#FF5630] "
 									: "border-[#4E5D78]/20 "
 							} rounded-md md:rounded-[10px] focus:outline-none focus:border-[#377DFF] placeholder-[#4E5D78]/60`}
@@ -73,7 +79,7 @@ const ForgotPasswrod = () => {
 					</div>
 					{!!errors && (
 						<div role="alert" className="text-[#FF5630]">
-							{errors.message}
+							{errors?.email?.message}
 						</div>
 					)}
 
@@ -83,6 +89,9 @@ const ForgotPasswrod = () => {
 					>
 						<span>Send</span>
 					</button>
+					<p role="alert" className="text-[#FF5630] mt-[-10px]">
+						{errors?.root?.random?.message}
+					</p>
 				</form>
 
 				<Link

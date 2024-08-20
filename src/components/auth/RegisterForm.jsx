@@ -47,7 +47,7 @@ const RegisterForm = () => {
 		<form onSubmit={handleSubmit(submitForm)}>
 			<div
 				className={`relative ${
-					errors.email.message ? "mb-1" : "my-[14px] md:my-5"
+					errors?.email?.message ? "mb-1" : "my-[14px] md:my-5"
 				}`}
 			>
 				<input
@@ -59,7 +59,7 @@ const RegisterForm = () => {
 					name="email"
 					placeholder="Your Email"
 					className={`relative w-full h-10 md:h-[52px] pl-[34px] md:pl-11 border ${
-						errors.email
+						errors?.email
 							? "border-[#FF5630] "
 							: "border-[#4E5D78]/20 "
 					} rounded-md md:rounded-[10px] focus:outline-none focus:border-[#377DFF] placeholder-[#4E5D78]/60`}
@@ -73,13 +73,13 @@ const RegisterForm = () => {
 
 			{!!errors && (
 				<div role="alert" className="text-[#FF5630]">
-					{errors.email.message}
+					{errors?.email?.message}
 				</div>
 			)}
 
 			<div
 				className={`relative ${
-					errors.name.message ? "mb-1" : "my-[14px] md:my-5"
+					errors?.name?.message ? "mb-1" : "my-[14px] md:my-5"
 				}`}
 			>
 				<input
@@ -91,7 +91,7 @@ const RegisterForm = () => {
 					name="name"
 					placeholder="Your Name"
 					className={`relative w-full h-10 md:h-[52px] pl-[34px] md:pl-11 border ${
-						errors.name
+						errors?.name
 							? "border-[#FF5630] "
 							: "border-[#4E5D78]/20 "
 					} rounded-md md:rounded-[10px] focus:outline-none focus:border-[#377DFF] placeholder-[#4E5D78]/60`}
@@ -105,13 +105,13 @@ const RegisterForm = () => {
 
 			{!!errors && (
 				<div role="alert" className="text-[#FF5630]">
-					{errors.name.message}
+					{errors?.name?.message}
 				</div>
 			)}
 
 			<div
 				className={`relative ${
-					errors.password.message ? "mb-1" : "my-[14px] md:my-5"
+					errors?.password?.message ? "mb-1" : "my-[14px] md:my-5"
 				}`}
 			>
 				<input
@@ -128,7 +128,7 @@ const RegisterForm = () => {
 					name="password"
 					placeholder="Create Password"
 					className={`relative w-full h-10 md:h-[52px] pl-[34px] md:pl-11 pr-[34px] md:pr-11 border  ${
-						errors.password
+						errors?.password
 							? "border-[#FF5630] "
 							: "border-[#4E5D78]/20 "
 					} rounded-md md:rounded-[10px] focus:outline-none focus:border-[#377DFF] placeholder-[#4E5D78]/60`}
@@ -149,17 +149,13 @@ const RegisterForm = () => {
 
 			{!!errors && (
 				<div role="alert" className="text-[#FF5630]">
-					{errors.password.message}
+					{errors?.password?.message}
 				</div>
 			)}
 
 			<div className="md:flex md:items-center md:justify-between md:gap-5">
 				<div
-					className={`flex items-center w-full h-10 md:h-[52px] border  ${
-						errors.email
-							? "border-[#FF5630]"
-							: "border-[#4E5D78]/20"
-					}rounded-md md:rounded-[10px] pl-[10px] md:pl-4 mt-[14px] md:mt-5`}
+					className={`flex items-center w-full h-10 md:h-[52px] border rounded-md md:rounded-[10px] pl-[10px] md:pl-4 mt-[14px] md:mt-5`}
 				>
 					<img src={calendar} alt="calendar" />
 					<DatePicker
@@ -171,11 +167,7 @@ const RegisterForm = () => {
 				</div>
 
 				<div
-					className={`flex items-center md:justify-between w-full h-10 md:h-[52px] border  ${
-						errors.email
-							? "border-[#FF5630] "
-							: "border-[#4E5D78]/20 "
-					} rounded-md md:rounded-[10px] px-[10px] md:px-4 mt-[14px] md:mt-5`}
+					className={`flex items-center md:justify-between w-full h-10 md:h-[52px] border  rounded-md md:rounded-[10px] px-[10px] md:px-4 mt-[14px] md:mt-5`}
 				>
 					<img src={gender} alt="gender icon" />
 
