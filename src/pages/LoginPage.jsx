@@ -35,7 +35,7 @@ const LoginPage = () => {
 						{"You haven't any account?"}
 					</p>
 					<Link
-						to="/"
+						to="/register"
 						className="text-[#377DFF] hover:underline ml-[6px] md:ml-[19px]"
 					>
 						Sign Up

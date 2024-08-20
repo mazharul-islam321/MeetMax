@@ -5,23 +5,24 @@ import RegistrationPage from "./pages/RegistrationPage";
 import LoginPage from "./pages/LoginPage";
 import ForgotPasswrod from "./pages/ForgotPasswrod";
 import HomePage from "./pages/HomePage";
-
-/* 
-
-roboto-bold text-[#4E5D78] text-lg ml-[10px]
-
-https://via.placeholder.com/150
-
- */
+import PrivateRoute from "./components/routes/PrivateRoute";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <HomePage />,
+		element: (
+			<PrivateRoute>
+				<HomePage />
+			</PrivateRoute>
+		),
 	},
 	{
 		path: "/homepage",
-		element: <HomePage />,
+		element: (
+			<PrivateRoute>
+				<HomePage />
+			</PrivateRoute>
+		),
 	},
 	{
 		path: "/register",

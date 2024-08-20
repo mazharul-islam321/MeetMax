@@ -7,10 +7,27 @@ import explore from "../../../assets/menuicon/explore.svg";
 import profile from "../../../assets/menuicon/profile.svg";
 import setting from "../../../assets/menuicon/setting.svg";
 import logout from "../../../assets/menuicon/logout.svg";
+import useAuth from "../../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 // md:mx-auto hidden md:block
 
 const Menu = () => {
+	const { logOut } = useAuth();
+	const navigate = useNavigate();
+
+	const handleLogout = () => {
+		logOut()
+			.then((res) => {
+				navigate("/login");
+
+				console.log("Logged out", res);
+			})
+			.catch((err) => {
+				console.log("Error logging out", err);
+			});
+	};
+
 	return (
 		<div className="mx-auto hidden md:block ">
 			{menuItems.map((item) => (
@@ -18,7 +35,10 @@ const Menu = () => {
 			))}
 
 			{/* just for logout */}
-			<div className="relative flex items-center w-[200px] h-[46px] rounded-[10px] mx-5 my-[10px]">
+			<div
+				onClick={handleLogout}
+				className="relative cursor-pointer flex items-center w-[200px] h-[46px] rounded-[10px] mx-5 my-[10px]"
+			>
 				<img src={logout} alt="log out" className="mx-5" />
 				<span className="roboto-bold text-[#4E5D78] text-base">
 					Logout

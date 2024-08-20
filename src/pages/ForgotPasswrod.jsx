@@ -1,11 +1,39 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthHeader from "../components/header/AuthHeader";
 import SubTitle from "../components/auth/SubTitle";
 import Title from "../components/auth/Title";
 import at from "../assets/at.svg";
 import angle_left from "../assets/angle-left.svg";
+import { useForm } from "react-hook-form";
+import useAuth from "../hooks/useAuth";
 
 const ForgotPasswrod = () => {
+	const navigate = useNavigate();
+	const { updatePasswordEmail } = useAuth();
+
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		setError,
+	} = useForm();
+
+	const submitForm = async (formData) => {
+		const { email } = formData;
+
+		updatePasswordEmail(email)
+			.then(() => {
+				alert("please check your email");
+				navigate("/login");
+			})
+			.catch((error) => {
+				console.log(error);
+				setError("root.random", {
+					type: "random",
+					message: `User with email ${formData.email} is not found`,
+				});
+			});
+	};
 	return (
 		<section className="bg-gradient-to-br from-[#FFFFFF]/40 to-[#FFFFFF]/10 pb-[88px]">
 			<AuthHeader />
@@ -21,14 +49,21 @@ const ForgotPasswrod = () => {
 
 			{/* forgot password card */}
 			<div className="w-[327px] md:w-[580px] h-[186px]  md:h-[248px] py-6 px-5 md:p-10 mx-auto shadow-[0_5px_20px_-15px_rgba(0,0,0,0.3)] bg-white  mt-7 rounded-[20px]">
-				<form>
+				<form onSubmit={handleSubmit(submitForm)}>
 					<div className="relative mb-[14px] md:mb-5">
 						<input
+							{...register("email", {
+								required: "Email ID is Required",
+							})}
 							type="email"
 							id="email"
 							name="email"
 							placeholder="Your Email"
-							className={`relative w-full h-10 md:h-[52px] pl-[34px] md:pl-11 border border-[#4E5D78]/20 rounded-md md:rounded-[10px] focus:outline-none focus:border-[#377DFF] placeholder-[#4E5D78]/60`}
+							className={`relative w-full h-10 md:h-[52px] pl-[34px] md:pl-11 border ${
+								errors.email
+									? "border-[#FF5630] "
+									: "border-[#4E5D78]/20 "
+							} rounded-md md:rounded-[10px] focus:outline-none focus:border-[#377DFF] placeholder-[#4E5D78]/60`}
 						/>
 						<img
 							src={at}
@@ -36,6 +71,11 @@ const ForgotPasswrod = () => {
 							className="absolute top-0 bottom-0 my-auto left-[10px] md:left-4 peer-disabled:cursor-not-allowed"
 						/>
 					</div>
+					{!!errors && (
+						<div role="alert" className="text-[#FF5630]">
+							{errors.message}
+						</div>
+					)}
 
 					<button
 						type="submit"
